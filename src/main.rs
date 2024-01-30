@@ -1,11 +1,6 @@
 fn main(){
-    /*
-            
-     */
   
-    println!("RUST");
-    
-
-    let  valor  = 10;
-    
+  /*
+    JUST 4 FUN
+   */
 }
