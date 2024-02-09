@@ -1,0 +1,18 @@
+
+
+
+Librerias -> dependencias
+
+
+Libreria (Guess_Name): I/O Library la libreria mencionada se encuentra dentro de la libreria standart de Vim llamada std:
+
+
+algunas funciones cambian el estado de la variable ?global? Result, la cual tiene 2 estados "Ok" y "Err"
+
+CAST == SHADOWING???
+
+Statement dont return anything
+
+
+
+
