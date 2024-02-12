@@ -7,9 +7,9 @@ fn game(){
     let mut count : u32 = 0;
     
     let ans: String = user_response();
-    if ans.is_empty(){
-
-        println!("Have a nice day!!");
+    println!("WITHIN GAME, USER'S RESPONSE IS {ans}");
+    if ans != "Yes"{
+                println!("Have a nice day!!");
     }else{  
         let num_to_guessed= user_Num();
         match num_to_guessed {
@@ -33,14 +33,14 @@ fn game(){
  
 
 fn user_response()-> String{
-
     println!("U WANNA HOW LUCKY U'RE:");
     let mut ans= String::new();
     io::stdin().read_line(&mut ans).expect("SOMETHING WENT WRONG");
-    if ans == "Yes"{
-        ans.trim().to_string()
+    let mut trimmed_answered = ans.trim().to_string();
+    if trimmed_answered == "Yes"{
+        return trimmed_answered;
     }else{
-        String::new()
+        return String::new();
     }
 }
 fn user_Num() -> Result<u32, String>{
@@ -49,8 +49,9 @@ fn user_Num() -> Result<u32, String>{
     io::stdin()
     .read_line(&mut number)
     .expect("SOMETHIN WENT WRONG");
-    let guessed_number = number.trim();
-     match number.parse(){
+    let guessed_number = number.trim().to_string();
+    println!("number ENTERED {guessed_number}");
+     match guessed_number.parse(){
         Ok(num) => Ok(num),
         Err(_) => Err(format!("SORRY {} IS NOT CONSIDERED A NUMBER", guessed_number)),
     }
@@ -59,5 +60,7 @@ fn user_Num() -> Result<u32, String>{
 
 
 fn main() {
+
+    
     game();
 }
