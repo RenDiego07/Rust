@@ -5,6 +5,8 @@ struct Student {
     age: u32,
     college: String,
 }
+struct teacher(String,i32,String);
+
 
 fn main() {
     let mut s1 = Student {
@@ -12,15 +14,23 @@ fn main() {
         age: 1,
         college: String::from("Espol"),
     };
+    
     //println!("age {}", s1.age);
     let mut response: String = String::new();
     if user_response(){
+        
         let mut s2 = Student{
                 name: get_name(),
                 age: 10,
                 college: String::from("hih"),
         };
+        println!("{}", s2.name);
+
     }
+    let t1 = teacher(String::from("Diego"), 20, String::from("CS"));
+    println!("{}",t1.0);
+
+
 
     
 }
@@ -37,9 +47,11 @@ fn user_response()-> bool{
 
 fn get_name()-> String{
     let mut name =  String::new();
-    print!("ENTER YOUR NAME: -> ");
+    println!("ENTER YOUR NAME: -> ");
     io::stdin().read_line(&mut name).expect("SOMETHING WENT WRONG");
-    name.trim().to_string()
+    
+    name = name.trim().to_string();
+    name
 }
 fn get_age()-> Result<u32, String>{
     let mut age = String::new();

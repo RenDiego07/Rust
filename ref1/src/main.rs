@@ -4,6 +4,13 @@ fn main() {
     println!("my first name is {}", n1);
    // name.clear(); compile error
     //println!("{}", n1);
+
+    let tuple = ["dei","woeir","rf"];
+    let slice = &tuple[0..1];
+    let y: usize = 0;
+    println!("{}", tuple[y]);
+    
+
 }
 fn first_word(s: &String) -> &str {
     let bytes = s.as_bytes();
