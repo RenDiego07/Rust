@@ -1,4 +1,5 @@
-
+use std::error::Error;
+use std::{env, fs, process};
 pub struct Config<'a>{
     pub path: &'a String,
     pub query: &'a String,
@@ -31,6 +32,13 @@ pub mod brightness{
 
     pub fn decay()-> String{
         String::from("hihi")
-
     }
+    
+}
+
+pub fn run (con: Config)-> Result<(), Box<dyn Error>>{
+    let contents = fs::read_to_string(con.path)?;
+    println!("with text :\n{contents}");
+    Ok(())
+
 }
