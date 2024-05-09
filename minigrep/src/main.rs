@@ -53,10 +53,8 @@ fn main() {
             librerias std::fs::process(para retornar un numero distinto de 0 como error)
                       std::env (para usar funcion args() y luego collect())
                       args() devuelve un iterador que produce argumentos pasados a traves del shell
-                      collect() convierte este iterador en un vector
+                      collect() convierte este iterador en un vector 
           */
 
-
-     
-
+          
 }
